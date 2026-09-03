@@ -320,7 +320,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 md:gap-4 w-full max-w-2xl mt-3 md:mt-4 px-4 md:px-0">
               <a 
-                href="#" 
+                href="https://www.instagram.com/coyo_tito_?igsi=MW5mM3d6YnExcDJrYQ==" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-full sm:flex-1 sm:min-w-[140px] border border-gray-600 bg-transparent text-white px-4 md:px-6 py-4 uppercase tracking-widest font-bold font-inter text-xs hover:border-white transition-colors rounded-sm"
