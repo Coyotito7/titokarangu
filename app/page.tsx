@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const productionJourney = [
   {
@@ -41,24 +42,28 @@ const creativeJourney = [
 const projects = [
   {
     title: "Camp Fearless",
+    slug: "camp-fearless",
     role: "Technical Director & Event Producer",
     description: "Managed stage cues, media teams, and complex program schedules, executing seamless operational workflows and technical direction.",
     tag: "Live Production"
   },
   {
     title: "The Coterie",
+    slug: "the-coterie",
     role: "Founder & Lead Organizer | Bunka Entertainment",
     description: "A premier event merging high fashion and Afro house music. Handled venue logistics, artist contracts, ticketing, and brand partnerships.",
     tag: "Event Management"
   },
   {
     title: "Zuru",
+    slug: "zuru",
     role: "Full-Stack Developer",
     description: "A location-based mobile and web application built with Flutter and Supabase for discovering and reviewing local businesses.",
     tag: "Application"
   },
   {
     title: "Taste Trail",
+    slug: "taste-trail",
     role: "Full-Stack Developer",
     description: "A dynamic restaurant rating application engineered utilizing Flutter, PHP, MySQL, and OpenStreetMap integrations.",
     tag: "Application"
@@ -247,30 +252,31 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {projects.map((project, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                className="bg-[#0a0a0a] border border-[#222] p-6 md:p-8 rounded-xl flex flex-col justify-between group hover:border-gray-400 cursor-pointer"
-              >
-                <div>
-                  <span className="text-[10px] md:text-xs font-inter uppercase tracking-widest bg-white text-black px-3 py-1 rounded-full mb-4 md:mb-6 inline-block">
-                    {project.tag}
-                  </span>
-                  <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide mb-2 font-monument group-hover:text-gray-300 transition-colors">
-                    {project.title}
-                  </h3>
-                  <h4 className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6 font-inter uppercase tracking-widest">
-                    {project.role}
-                  </h4>
-                  <p className="text-sm md:text-base text-gray-400 font-inter leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-              </motion.div>
+              <Link href={`/projects/${project.slug}`} key={index} className="block group">
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                  className="bg-[#0a0a0a] border border-[#222] p-6 md:p-8 rounded-xl flex flex-col justify-between h-full hover:border-gray-400 cursor-pointer"
+                >
+                  <div>
+                    <span className="text-[10px] md:text-xs font-inter uppercase tracking-widest bg-white text-black px-3 py-1 rounded-full mb-4 md:mb-6 inline-block">
+                      {project.tag}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide mb-2 font-monument group-hover:text-gray-300 transition-colors">
+                      {project.title}
+                    </h3>
+                    <h4 className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6 font-inter uppercase tracking-widest">
+                      {project.role}
+                    </h4>
+                    <p className="text-sm md:text-base text-gray-400 font-inter leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </motion.div>
@@ -309,7 +315,7 @@ export default function Home() {
                 WhatsApp
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/Coyotito7" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-full sm:flex-1 sm:min-w-[140px] border border-gray-600 bg-transparent text-white px-4 md:px-6 py-4 uppercase tracking-widest font-bold font-inter text-xs hover:border-white transition-colors rounded-sm"
@@ -323,9 +329,27 @@ export default function Home() {
                 href="https://www.instagram.com/coyo_tito_?igsi=MW5mM3d6YnExcDJrYQ==" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-full sm:flex-1 sm:min-w-[140px] border border-gray-600 bg-transparent text-white px-4 md:px-6 py-4 uppercase tracking-widest font-bold font-inter text-xs hover:border-white transition-colors rounded-sm"
+                className="w-full sm:flex-1 sm:min-w-[140px] border border-gray-600 bg-transparent text-white px-4 md:px-6 py-4 uppercase tracking-widest font-bold font-inter text-xs hover:border-[#E1306c] hover:text-[#E1306c] transition-colors rounded-sm"
               >
                 Instagram
+              </a>
+             
+            </div>
+
+            {/* Download CV Button */}
+            <div className="mt-12 md:mt-16 w-full flex justify-center px-4">
+              <a 
+                href="/Tito_Karangu_CV.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 border border-gray-500 bg-[#111] text-gray-300 px-8 py-5 uppercase tracking-widest font-bold font-inter text-xs hover:border-white hover:text-white hover:bg-transparent transition-all rounded-sm group w-full sm:w-auto"
+              >
+                <span>View Résumé</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-y-1 transition-transform">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
               </a>
             </div>
           </motion.div>
@@ -341,7 +365,6 @@ export default function Home() {
           </motion.div>
         </div>
       </footer>
-
     </main>
   );
 }
