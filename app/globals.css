@@ -26,6 +26,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-monument: var(--font-monument), "MonumentExtended", sans-serif;
+  --font-inter: var(--font-geist-sans), "Inter", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -4,7 +4,7 @@ import "./globals.css";
 import local from "next/font/local";
 
 const monumentRegular = local({
-  src: "./fonts/MonumentExtended-Regular.otf",
+  src: "./fonts/MonumentExtended-Regular.woff2",
   variable: "--font-monument",
   display: "swap",
 })
