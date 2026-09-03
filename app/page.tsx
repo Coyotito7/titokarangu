@@ -104,11 +104,11 @@ export default function Home() {
       <section className="relative h-screen flex flex-col justify-center items-center px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/hero-bg.jpg" 
+            src="/hero-bg.jpeg" 
             alt="Tito Karangu Hero Background" 
-            className="w-full h-full object-cover opacity-25 scale-105 filter brightness-50"
+            className="w-full h-full object-cover opacity-40 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-[#050505]/80 to-[#050505]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/50 via-[#050505]/60 to-[#050505]" />
         </div>
 
         <motion.div 
@@ -327,7 +327,6 @@ export default function Home() {
               >
                 Instagram
               </a>
-            
             </div>
           </motion.div>
 
