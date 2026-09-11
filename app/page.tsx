@@ -79,6 +79,9 @@ const projects = [
 
 const fireworkColors = ["#00FFFF", "#FF1493", "#FFD700", "#32CD32", "#FF4500", "#9400D3", "#00FFFF", "#FF1493", "#FFD700", "#32CD32", "#FF4500", "#9400D3"];
 
+const contentPillars = ["Lifestyle"];
+const creatorTools = ["Canva", "CapCut", "Trend-Spotting"];
+
 const TimelineBlock = ({ item, index, direction }: { item: any, index: number, direction: "left" | "right" }) => (
   <div className="relative pb-12 md:pb-16 last:pb-0">
     <motion.div
@@ -108,6 +111,7 @@ export default function Home() {
         <div className="flex gap-6 text-xs font-inter uppercase tracking-widest text-gray-400">
           <a href="#journey" className="hover:text-white transition-colors hidden sm:block">Journey</a>
           <a href="#works" className="hover:text-white transition-colors">Works</a>
+          <a href="#social" className="hover:text-white transition-colors">Social</a>
           <a href="#contact" className="hover:text-white transition-colors">Contact</a>
         </div>
       </nav>
@@ -285,6 +289,112 @@ export default function Home() {
                 </motion.div>
               </Link>
             ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Social & Content Section */}
+      <section id="social" className="w-full relative flex flex-col items-center py-20 md:py-32 px-4 md:px-6 scroll-mt-20 bg-[#0a0a0a] border-y border-[#222]">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-50px" }}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl w-full"
+        >
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-[10px] md:text-xs font-inter uppercase tracking-widest bg-white text-black px-3 py-1 rounded-full mb-4 md:mb-6 inline-block">
+              Social Media & Content
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-widest font-monument">
+              Beyond The Code
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+            <div className="md:col-span-2">
+              <h3 className="text-lg md:text-xl font-bold uppercase tracking-widest mb-4 font-monument">
+                The Story
+              </h3>
+              <p className="text-gray-300 font-inter leading-relaxed text-base md:text-lg mb-4">
+                Lifestyle content, unscripted. No strict niche, no overthinking the plan — just talking about whatever&apos;s actually on my mind. I got into content creation to be present online and have fun being myself, and that&apos;s still the whole approach: show up, talk, see what lands.
+              </p>
+              <p className="text-gray-400 font-inter leading-relaxed text-sm md:text-base mb-8">
+                That same instinct for what&apos;s worth posting, and when, is what carries over into how I think about content strategy for brands and events — not just for myself.
+              </p>
+
+              <Link
+                href="/projects/coterie-content-calendar"
+                className="group inline-flex items-center gap-3 border border-[#333] hover:border-white rounded-lg px-5 py-4 transition-colors"
+              >
+                <div>
+                  <span className="text-[10px] font-inter uppercase tracking-widest text-gray-500 block mb-1">
+                    Featured Case Study
+                  </span>
+                  <span className="font-monument text-sm md:text-base uppercase tracking-widest group-hover:text-gray-300 transition-colors">
+                    The Coterie — Content Calendar →
+                  </span>
+                </div>
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-8">
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-widest mb-4 font-monument text-gray-400">
+                  Content Pillar
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {contentPillars.map((pillar) => (
+                    <span
+                      key={pillar}
+                      className="text-xs font-inter uppercase tracking-widest border border-[#222] px-3 py-2 rounded-sm text-gray-300"
+                    >
+                      {pillar}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-widest mb-4 font-monument text-gray-400">
+                  Tools & Skills
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {creatorTools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-xs font-inter uppercase tracking-widest border border-[#222] px-3 py-2 rounded-sm text-gray-300"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-widest mb-4 font-monument text-gray-400">
+                  Find Me
+                </h3>
+                <div className="flex flex-col gap-3">
+                  <a
+                    href="https://www.instagram.com/coyo_tito/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-gray-600 bg-transparent text-white px-4 py-3 uppercase tracking-widest font-bold font-inter text-xs text-center rounded-sm hover:border-[#E1306c] hover:text-[#E1306c] transition-colors"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@coyo_tito"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-gray-600 bg-transparent text-white px-4 py-3 uppercase tracking-widest font-bold font-inter text-xs text-center rounded-sm hover:border-white hover:text-white transition-colors"
+                  >
+                    TikTok
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </section>
